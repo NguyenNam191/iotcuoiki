@@ -17,7 +17,7 @@ Servo
 Buzzer
 LCD I2C 16x2
 
-**2. phần mềm **
+**2. Phần mềm**
 Node-RED:
 Máy chủ MQTT: EMQX
 Môi trường phát triển: Visual Studio Code, Platform.IO
