@@ -3,7 +3,7 @@ Giới thiệu chung về dự án Smart Home IoT
 Khái niệm Smart Home IoT
 Smart Home IoT là hệ thống nhà thông minh kết nối Internet, cho phép giám sát và điều khiển các thiết bị trong nhà từ xa. Hệ thống tích hợp cảm biến, đèn, quạt, cửa, chuông báo và các thiết bị điện tử khác, hoạt động tự động hoặc theo lệnh người dùng. Mục tiêu là tăng tiện nghi, nâng cao an toàn, tiết kiệm năng lượng và dễ mở rộng cho ngôi nhà thông minh. Giao diện trực quan trên dashboard giúp người dùng theo dõi và quản lý mọi lúc mọi nơi.
 Nội dung chính
-1. Phần cứng
+**1. Phần cứng**
 Vi điều khiển ESP32 DevKit V1
 cảm biến RFID
 Cảm biến siêu âm (ultrasonic distance) SRF05
@@ -16,19 +16,19 @@ Servo
 Buzzer
 LCD I2C 16x2
 
-2. phần mềm 
+**2. phần mềm **
 Node-RED:
 Máy chủ MQTT: EMQX
 Môi trường phát triển: Visual Studio Code, Platform.IO
 
-3. Ý tưởng
+**3. Ý tưởng**
 sơ đồ nhà
 ![alt text](image-3.png)
 ![alt text](image-4.png)
 Sơ đồ chân cắm:
 ![sơ đồ của smart home](<sơ đồ.jpg>)
 
-4. Mô tả chức năng
+**4. Mô tả chức năng**
 Hệ thống Smart Home IoT sử dụng ESP32 làm bộ điều khiển trung tâm, kết nối với Node-RED Dashboard 2 thông qua giao thức MQTT để điều khiển và giám sát các thiết bị trong nhà. Hệ thống tích hợp nhiều loại cảm biến và thiết bị thực thi nhằm tạo ra một ngôi nhà thông minh với khả năng tự động hóa, điều khiển từ xa và cảnh báo an ninh.
 
 Cửa trong nhà được điều khiển bởi servo, kết hợp với LED trong nhà và quạt. Khi thẻ RFID hợp lệ được quét, cửa sẽ mở, LED và quạt bật, LCD hiển thị thông điệp chào mừng, đồng thời trạng thái mở cửa được gửi đến MQTT. Sau một khoảng thời gian cố định, cửa sẽ tự động đóng, LED và quạt tắt, trạng thái đóng cửa cũng được gửi đi. Ngoài việc mở bằng RFID, người dùng có thể điều khiển cửa từ dashboard thông qua MQTT với chủ đề esp32/cmd/door. Hệ thống còn hỗ trợ cảnh báo trộm khi quét quá số lần thẻ RFID sai, bật buzzer liên tục và hiển thị tin nhắn “CO TROM” trên LCD.
@@ -47,13 +47,13 @@ Ngoài ra, hệ thống sử dụng buzzer để phát các tín hiệu âm than
 
 Tất cả các thiết bị, cảm biến và actuator đều được kết nối với ESP32 và được điều khiển thông qua các logic tự động hoặc từ dashboard bằng MQTT. Hệ thống đảm bảo giám sát liên tục, điều khiển từ xa, cảnh báo an ninh và cháy, hiển thị thông tin môi trường và trạng thái thiết bị, tạo nên một ngôi nhà thông minh hoàn chỉnh với khả năng mở rộng và dễ quản lý.
 
-5. phần mềm điều khiển
+**5. phần mềm điều khiển**
 về node red gồm có 3 bảng điều khiển:
 ![bảng điều khiển cửa ra vào](image.png)
 ![bảng theo dõi nhiệt độ độ ẩm lượng mưa](image-1.png)
 ![bảng theo dõi trạng thái của đèn](image-2.png)
 
-6. Kết quả 
+**6. Kết quả **
 hệ thống có khả năng 
 Điều khiển cửa và cổng tự động:
 Servo điều khiển cửa trong nhà (door) và cổng (gate).
@@ -76,12 +76,12 @@ Cảm biến khoảng cách siêu âm để bật LED bãi đỗ xe và cảnh b
 Hiển thị LCD
 Hiển thị trạng thái môi trường, thông báo người dùng, cảnh báo.
 
-7. Hạn chế
+**7. Hạn chế**
  Vẫn chưa thể tích hợp được tất cả tính năng lên dashboard của node-red
 khi quá nhiều code dẫn đến lcd hoạt động không ổn định nên phải lược bỏ 1 số phần
 mô hình chưa đẹp
 
-8. kết luận
+**8. kết luận**
 Đây là một hệ thống Smart Home IoT đầy đủ và thực tế, tích hợp RFID, servo, cảm biến siêu âm, DHT22, cảm biến mưa, cảm biến lửa, LDR, buzzer và   LCD, đồng thời hỗ trợ MQTT để giao tiếp với Node-RED Dashboard 2. Hệ thống vừa tự động hóa, vừa cho phép điều khiển từ xa, giám sát môi trường và cảnh báo an ninh/cháy. Code rõ ràng, dễ mở rộng nhưng cần cải thiện một số delay blocking để hoạt động mượt hơn.
 video demo:
 video về phần cứng: https://drive.google.com/file/d/13tpJf6-Yqa2xUDKfNyfO_P07cZyYpzEl/view?usp=sharing
