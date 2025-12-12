@@ -2,7 +2,8 @@
 Giới thiệu chung về dự án Smart Home IoT
 Khái niệm Smart Home IoT
 Smart Home IoT là hệ thống nhà thông minh kết nối Internet, cho phép giám sát và điều khiển các thiết bị trong nhà từ xa. Hệ thống tích hợp cảm biến, đèn, quạt, cửa, chuông báo và các thiết bị điện tử khác, hoạt động tự động hoặc theo lệnh người dùng. Mục tiêu là tăng tiện nghi, nâng cao an toàn, tiết kiệm năng lượng và dễ mở rộng cho ngôi nhà thông minh. Giao diện trực quan trên dashboard giúp người dùng theo dõi và quản lý mọi lúc mọi nơi.
-Nội dung chính
+Nội dung chính:
+
 **1. Phần cứng**
 Vi điều khiển ESP32 DevKit V1
 cảm biến RFID
